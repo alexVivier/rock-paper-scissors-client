@@ -1,5 +1,5 @@
 const table = require('text-table');
-const {values, choices} = require("./common/constants");
+const {values, choices} = require("./constants");
 
 
 const finishText = (game) => {

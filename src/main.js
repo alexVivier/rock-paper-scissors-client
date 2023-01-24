@@ -1,7 +1,7 @@
 const {playRound} = require("./game");
 
 const {Command} = require('commander');
-const {formatRecapGame} = require("./outputs");
+const {formatRecapGame} = require("./common/outputs");
 const {createGame} = require("./services/game.service");
 const program = new Command();
 
