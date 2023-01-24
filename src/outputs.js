@@ -1,7 +1,6 @@
 const table = require('text-table');
+const {values, choices} = require("./common/constants");
 
-const values = ['rock', 'paper', 'scissors'];
-const choices = ['Rock ✊', 'Paper 🫲', 'Scissors 🤞']
 
 const finishText = (game) => {
     let string;
@@ -18,7 +17,7 @@ const formatRecapGame = (game) => {
     game.rounds.forEach((round, index) => {
         const playerChoiceFormated = choices[values.findIndex(el => el === round.playerChoice)];
         const computerChoiceFormated = choices[values.findIndex(el => el === round.computerChoice)];
-        array.push([`Round #${index}`, `You choose : ${playerChoiceFormated}`, `Computer choose : ${computerChoiceFormated}`]);
+        array.push([`Round #${index + 1}`, `You choose : ${playerChoiceFormated}`, `Computer choose : ${computerChoiceFormated}`]);
     })
     return `\n\nRECAP\n${table(array)}\n\n${finishText(game)}\n`;
 }
