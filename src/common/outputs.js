@@ -22,4 +22,15 @@ const formatRecapGame = (game) => {
     return `\n\nRECAP\n${table(array)}\n\n${finishText(game)}\n`;
 }
 
-module.exports = {finishText, formatRecapGame}
+const formatRoundRecap = (round) => {
+    let string;
+    if (!round.winner) {
+        string = `It's a draw.`
+    } else {
+        string = `${round.winner.toUpperCase()} won.`
+    }
+    string += ` You choose ${round.playerChoice}, computer choose ${round.computerChoice}`;
+    return string;
+}
+
+module.exports = {finishText, formatRecapGame, formatRoundRecap}

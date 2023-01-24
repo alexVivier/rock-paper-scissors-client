@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const {values, choices} = require("./common/constants");
 const {getComputerChoice, addPlayedRound, getGame} = require("./services/game.service");
+const {formatRoundRecap} = require("./common/outputs");
 
 
 async function playRound(game) {
@@ -16,7 +17,6 @@ async function playRound(game) {
         },
     ]);
     // Log the computer's choice to the console
-    console.log(`Computer choose : ${choices[values.findIndex(el => el === computerChoice)]}`);
     // Assign the player's choice
     const playerChoice = values[choices.findIndex(el => el === answers.playerChoice)];
     // Add the round information to the game
@@ -24,7 +24,8 @@ async function playRound(game) {
         computerChoice,
         playerChoice
     });
-    const lastRound = res.rounds[res.rounds.length - 1]
+    const lastRound = res.rounds[res.rounds.length - 1];
+    console.log(formatRoundRecap(lastRound))
     // Check if the game is still in progress (status === "started")
     if (res.status === "started") {
         // If the game is still in progress, call playRound again with updated game information
