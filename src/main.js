@@ -1,7 +1,7 @@
-const {createGame, getGame, getComputerChoice, addPlayedRound, playRound} = require("./game");
+const {createGame, playRound} = require("./game");
 
 const {Command} = require('commander');
-const inquirer = require("inquirer");
+const {formatRecapGame} = require("./outputs");
 const program = new Command();
 
 program
@@ -17,7 +17,7 @@ program.command('play')
             maxRoundToWin: parseInt(str.rounds)
         });
         const res = await playRound(game);
-        console.log({finalRes: res})
+        console.log(formatRecapGame(res));
     });
 
 program.parse();
