@@ -12,12 +12,15 @@
   "bin": {
     "ropesc": "./bin/index.js"
   },
-  "author": "",
+  "type": "module",
+  "author": "Alexis VIVIER",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.3",
     "commander": "^10.0.0",
+    "conf": "^11.0.1",
     "inquirer": "^8.2.5",
+    "jwt-decode": "^3.1.2",
     "text-table": "^0.2.0"
   }
 }

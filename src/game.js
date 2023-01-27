@@ -1,10 +1,10 @@
-const inquirer = require("inquirer");
-const {values, choices} = require("./common/constants");
-const {getComputerChoice, addPlayedRound, getGame} = require("./services/game.service");
-const {formatRoundRecap} = require("./common/outputs");
+import inquirer from "inquirer";
+import {values, choices} from "./common/constants.js";
+import {getComputerChoice, addPlayedRound, getGame} from "./services/game.service.js";
+import {formatRoundRecap} from "./common/outputs.js";
 
 
-async function playRound(game) {
+export const playRound = async (game) => {
     // Get the computer's choice for the round
     const computerChoice = await getComputerChoice();
     // Use inquirer library to prompt player for their choice
@@ -34,6 +34,3 @@ async function playRound(game) {
     // Return the updated game information
     return await getGame(game._id);
 }
-
-
-module.exports = {playRound};

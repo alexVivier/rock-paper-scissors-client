@@ -1,4 +1,4 @@
-const axios = require("axios")
+import axios from "axios";
 
 let axiosI = null;
 
@@ -9,4 +9,4 @@ function getAxiosInstance() {
     return axios;
 }
 
-module.exports = getAxiosInstance()
+export default getAxiosInstance();

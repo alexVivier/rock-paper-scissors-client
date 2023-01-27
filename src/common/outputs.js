@@ -1,8 +1,8 @@
-const table = require('text-table');
-const {values, choices} = require("./constants");
+import table from 'text-table';
+import {values, choices} from "./constants.js";
 
 
-const finishText = (game) => {
+export const finishText = (game) => {
     let string;
     if (game.winner === 'player') {
         string = 'Congrats ! You won against the quantum computer 🎉'
@@ -12,7 +12,7 @@ const finishText = (game) => {
     return string;
 }
 
-const formatRecapGame = (game) => {
+export const formatRecapGame = (game) => {
     const array = [];
     game.rounds.forEach((round, index) => {
         const playerChoiceFormated = choices[values.findIndex(el => el === round.playerChoice)];
@@ -22,7 +22,7 @@ const formatRecapGame = (game) => {
     return `\n\nRECAP\n${table(array)}\n\n${finishText(game)}\n`;
 }
 
-const formatRoundRecap = (round) => {
+export const formatRoundRecap = (round) => {
     let string;
     if (!round.winner) {
         string = `It's a draw.`
@@ -32,5 +32,3 @@ const formatRoundRecap = (round) => {
     string += ` You choose ${round.playerChoice}, computer choose ${round.computerChoice}`;
     return string;
 }
-
-module.exports = {finishText, formatRecapGame, formatRoundRecap}
