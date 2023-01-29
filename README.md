@@ -27,3 +27,22 @@ Here we pass 2 so you or the computer will have to win 2 rounds to win the game.
 ````
 ropesc play --rounds 2
 ````
+
+Auth has be added to rock-paper-scissors-client. You can now create an account to save your games.
+
+Follow next steps to use authentication correclty.
+
+To create an account to record your games use :
+````
+ropesc signup
+````
+
+To log in use :
+````
+ropesc login
+````
+
+To log out user :
+````
+ropesc logout
+````
