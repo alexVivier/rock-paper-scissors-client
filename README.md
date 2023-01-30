@@ -42,7 +42,7 @@ To log in use :
 ropesc login
 ````
 
-To log out user :
+To log out use :
 ````
 ropesc logout
 ````
