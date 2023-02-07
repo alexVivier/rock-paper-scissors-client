@@ -5,6 +5,7 @@ import {playRound} from "./game.js";
 import {formatRecapGame} from "./common/outputs.js";
 import {login, logout, signup} from "./auth.js";
 import {getItem} from "./local-storage/index.js";
+import {leaderboard} from "./leaderboard.js";
 const program = new Command();
 
 program
@@ -43,5 +44,11 @@ program.command('logout')
     .description('Logout form the current account')
     .action(async () => {
         logout()
+    })
+
+program.command('leaderboard')
+    .description('Display rock paper scissors leaderboard')
+    .action(async () => {
+        leaderboard();
     })
 program.parse();
